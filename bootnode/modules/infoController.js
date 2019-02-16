@@ -1,6 +1,6 @@
 const redis = require('./redis')
 const slack = require('./slack')
-const twilio = require('./twilio')
+// const twilio = require('./twilio')
 
 class InfoController {
   constructor() {
@@ -36,10 +36,10 @@ class InfoController {
     res.json({ status: 200 })
   }
 
-  twilio(req, res) {
-    twilio.send({})
-    res.json({ status: 200 })
-  }
+  // twilio(req, res) {
+  //   twilio.send({})
+  //   res.json({ status: 200 })
+  // }
 }
 
 module.exports = new InfoController()

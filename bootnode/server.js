@@ -3,6 +3,7 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const http = require('http')
 const ExpressPeerServer = require('peer').ExpressPeerServer
+const amberdata = require('./modules/amberdata')
 
 const app = new express()
 
@@ -66,6 +67,8 @@ class Server {
     peerserver.on('disconnect', id => {
       console.log('PEER DIS id:', id)
     })
+
+    amberdata.listen()
 
     return app
   }
