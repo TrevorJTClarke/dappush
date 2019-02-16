@@ -14,3 +14,5 @@ module.exports = express
   })
   .get('/redis', infoController.getRedis)
   .post('/redis', infoController.setRedis)
+  .get('/redispop', infoController.popRedis)
+  .post('/redispush', infoController.pushRedis)

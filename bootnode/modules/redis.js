@@ -29,7 +29,6 @@ class RedisProvider {
     return this.client
   }
 
-  // NOTE: TBD if I hash the data?
   set(key, value) {
     if (!this.client) return Promise.resolve(null)
     return new Promise((resolve, reject) => {
@@ -52,6 +51,29 @@ class RedisProvider {
 
         // reply is null when the key is missing
         console.log('GET redis:', reply)
+        resolve(reply)
+      })
+    })
+  }
+
+  // NOTE: TBD if I hash the data?
+  push(key, value) {
+    if (!this.client) return Promise.resolve(null)
+    return new Promise((resolve, reject) => {
+      this.client.rpush(key, value, (err, reply) => {
+        // callback
+        console.log('PUSH redis:', reply)
+        resolve(reply)
+      })
+    })
+  }
+
+  pop(key) {
+    if (!this.client) return Promise.resolve(null)
+    return new Promise((resolve, reject) => {
+      this.client.lpop(key, (err, reply) => {
+        // callback
+        console.log('POP redis:', reply)
         resolve(reply)
       })
     })
