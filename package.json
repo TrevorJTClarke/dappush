@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "node scripts/dev-server.js",
     "start": "npm run dev",
+    "server": "node ./bootnode",
     "build": "node scripts/build.js",
     "cli": "ganache-cli",
     "test": "",
