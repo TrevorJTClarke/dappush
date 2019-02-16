@@ -27,7 +27,7 @@ contract UserPreferences is Ownable, Pausable {
       bytes email,
       uint32 phone
     ) {
-      Preference memory _pref = dappPrefs[dappId]
+      Preference memory _pref = dappPrefs[dappId];
       return (
         _pref.webhook,
         _pref.email,
