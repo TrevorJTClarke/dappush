@@ -1,8 +1,6 @@
 const express = require('express')
 const infoController = require('./infoController')
 
-// const ic = new infoController()
-
 module.exports = express
   .Router()
   .get('/', (req, res) => {
@@ -14,4 +12,5 @@ module.exports = express
       index: 0
     })
   })
-  .post('/', infoController.setRedis)
+  .get('/redis', infoController.getRedis)
+  .post('/redis', infoController.setRedis)

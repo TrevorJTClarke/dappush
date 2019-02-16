@@ -13,7 +13,7 @@ class RedisProvider {
   }
 
   connect() {
-    this.client = redis.createClient()
+    if (!this.client) this.client = redis.createClient()
 
     // errors? sure, lets see em
     this.client.on('error', err => {
@@ -33,10 +33,10 @@ class RedisProvider {
   set(key, value) {
     if (!this.client) return Promise.resolve(null)
     return new Promise((resolve, reject) => {
-      this.client.set(key, value, () => {
+      this.client.set(key, value, (err, reply) => {
         // callback
-        console.log('redis.print', redis.print)
-        resolve(redis.print)
+        console.log('SET redis:', reply)
+        resolve(reply)
       })
     })
   }
@@ -44,14 +44,14 @@ class RedisProvider {
   get(key) {
     if (!this.client) return Promise.resolve(null)
     return new Promise((resolve, reject) => {
-      this.client.get("missingkey", (err, reply) => {
+      this.client.get(key, (err, reply) => {
         if (err) {
           reject(err)
           return
         }
 
         // reply is null when the key is missing
-        console.log(reply)
+        console.log('GET redis:', reply)
         resolve(reply)
       })
     })
@@ -63,4 +63,7 @@ class RedisProvider {
   }
 }
 
-module.exports = new RedisProvider()
+const r = new RedisProvider()
+r.connect()
+
+module.exports = r

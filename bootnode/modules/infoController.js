@@ -2,18 +2,20 @@ const redis = require('./redis')
 
 class InfoController {
   constructor() {
-    this.redis = redis
-    console.log('this.redis', this.redis)
-    this.redis.connect()
     return this
   }
 
   async setRedis(req, res) {
     const { key, value } = req.body
-    const data = await this.redis.set(key, value)
+    const data = await redis.set(key, value)
+    res.json(data)
+  }
+
+  async getRedis(req, res) {
+    const { key } = req.query
+    const data = await redis.get(key)
     res.json(data)
   }
 }
-
 
 module.exports = new InfoController()
