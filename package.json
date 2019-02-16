@@ -10,6 +10,7 @@
     "dev": "node scripts/dev-server.js",
     "start": "npm run dev",
     "server": "node ./bootnode",
+    "server2": "node ./bootnode --port=1000",
     "build": "node scripts/build.js",
     "cli": "ganache-cli",
     "test": "",
@@ -35,6 +36,7 @@
   ],
   "license": "Apache",
   "dependencies": {
+    "args": "^5.0.0",
     "axios": "^0.18.0",
     "dotenv": "^6.1.0",
     "openzeppelin-solidity": "^1.12.0",

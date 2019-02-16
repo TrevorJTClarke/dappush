@@ -2,7 +2,13 @@ const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
 const http = require('http')
+const ExpressPeerServer = require('peer').ExpressPeerServer
+
 const app = new express()
+
+const options = {
+  debug: true
+}
 
 // REDIS: Every node needs it to sync the queue
 const sys = require('util')
@@ -14,6 +20,7 @@ function puts(error, stdout, stderr) {
 }
 
 // start redis immediately, because we always need it, and dont like boot errors
+exec('redis-cli shutdown')
 exec('redis-server', puts)
 
 // var PeerServer = require('peer').PeerServer
@@ -45,6 +52,19 @@ class Server {
     const server = http.createServer(app)
     server.listen(port, () => {
       console.log(`Bootnode running - ${process.env.NODE_ENV || 'development'} http://localhost:${port}`)
+    })
+
+    // WEB RTC SETUP
+    const peerserver = ExpressPeerServer(server, options)
+    app.use('/peers', peerserver)
+
+    // TODO: Manage the peer connections & associate to state channel
+    peerserver.on('connection', id => {
+      console.log('PEER CONN id:', id)
+    })
+
+    peerserver.on('disconnect', id => {
+      console.log('PEER DIS id:', id)
     })
 
     return app

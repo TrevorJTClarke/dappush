@@ -4,9 +4,9 @@
       <img src="../../static/placeholder-logo-2.png" />
     </div>
     <!-- TODO: This will display loading at first -->
-    <div class="address" v-if="acct">
+    <!-- <div class="address" v-if="acct">
       <span>{{ acct }}</span>
-    </div>
+    </div> -->
   </div>
 </template>
 
