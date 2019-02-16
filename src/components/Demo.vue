@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <div class="intro-header">
-      <h1>Welcome!</h1>
-      <a href="/demo">Go Demo</a>
+      <h1>Demo section!</h1>
+      <a href="/">Go Home</a>
     </div>
   </div>
 </template>
