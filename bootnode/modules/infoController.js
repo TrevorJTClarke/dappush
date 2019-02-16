@@ -1,4 +1,6 @@
 const redis = require('./redis')
+const slack = require('./slack')
+const twilio = require('./twilio')
 
 class InfoController {
   constructor() {
@@ -27,6 +29,16 @@ class InfoController {
     const { key } = req.query
     const data = await redis.pop(key)
     res.json(data)
+  }
+
+  slack(req, res) {
+    slack.send({})
+    res.json({ status: 200 })
+  }
+
+  twilio(req, res) {
+    twilio.send({})
+    res.json({ status: 200 })
   }
 }
 

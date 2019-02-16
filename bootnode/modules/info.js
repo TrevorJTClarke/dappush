@@ -16,3 +16,5 @@ module.exports = express
   .post('/redis', infoController.setRedis)
   .get('/redispop', infoController.popRedis)
   .post('/redispush', infoController.pushRedis)
+  .get('/slack', infoController.slack)
+  .get('/twilio', infoController.twilio)
