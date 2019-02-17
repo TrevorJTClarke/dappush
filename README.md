@@ -10,32 +10,18 @@ WEA meets Ethereum.
 # Team Members
 Josh Han, Trevor Clarke, Waleed Elsakka
 
-# Status.im ID 
-Telegram? 
+# Detailed Project Description
+Dappush.info
 
-# Detailed Project Description (no more than 3-4 sentences)
-Dappush 
-
-# Describe your tech stack (e.g., protocols, languages, API’s, etc.)
-State Channels:
-Example use cases:
-- remittance/customer support
-- micro-payments, payment channels
-- IoT - slock.it
-- Shared savings account
-
-Notes:
-- CREATE2 - counterfactual instantiation, allows lots of up front work to take place, and closing the channel upon disagreements and final state change
+# Tech Stack
 
 State Channel Bootnodes
-An economy driven application architecture
+- An economy driven application architecture
 
 Architecture:
 - redis
 - WebRTC - https://peerjs.com/
 - nodejs
-
-Research
 
 RPS:
 - both players deploy contracts
@@ -55,12 +41,24 @@ Payment Channels:
    - Library that uses pure functions only to validate proposed state change validity
 - Conclusion
 
-# Impact Track
+Research/Notes:
+- CREATE2 
+- counterfactual instantiation, allows lots of up front work to take place, and closing the channel upon disagreements and final state change
 
-
-# All Bounties Completed/Incorporated
 Hackathon Challenges:
 - Celer: https://kauri.io/article/c769a1d405544dc18ae17f9189349da6/v2/celer-network-sponsor-bounty-at-ethdenver-2019!
 - Blocknative: https://kauri.io/article/80219f341f3742b7b1529a3494d38576/v3/blocknative-sponsor-bounty-at-ethdenver-2019!
 - Fortmatic: https://kauri.io/article/67292751c2334f78bd4c6d187dd64f50/v2/fortmatic-sponsor-bounty-at-ethdenver-2019!
 - Portis: see gitcoin
+
+# Impact Track - Increasing Emergency Preparedness
+<a href="https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%20refinement_Eng.pdf"> UN Global indicator framework for the Sustainable Development Goals & targets of the 2030 Agenda for Sustainable Development</a>
+
+3.d Strengthen the capacity of all countries, in particular developing countries, for early warning, risk reduction and management of national and global health risks
+3.d.1 International Health Regulations (IHR) capacity and health emergency preparedness
+During 2012 the United States launched the Wireless Emergency Alert (WEA) system, and it has acted as an essential part of population preparedness for natural disasters, imminent threats, and presidential alerts. International adoption of emergency systems has been slow due to government censorship, lack of economic incentive and underlying technology. 
+
+
+
+
+
