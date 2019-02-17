@@ -6,14 +6,18 @@ import "zeppelin-solidity/contracts/math/SafeMath.sol";
 
 contract Registry{
 
-//Is the masterNode only allowed to call this contract?
-/*
-    address masterNode;
+    //Is the masterNode only allowed to call this contract?
+    //address masterNode;
 
-    constructor () public{
-        require(msg.sender == masterNode);
+    constructor(address _node, address _nodeContract, uint256 _channelID, uint256 _balance, uint256 _notificationsPushed) public{
+        node.node = _node;
+        node.nodeContract = _nodeContract;
+        node.channelID = _channelID;
+        node.balance = _balance;
+        node.notificationsPushed = _notificationsPushed;
+
+        //require(msg.sender == masterNode, "Only owner can access this contract"); Is this true?
     }
-*/
 
     struct node {
         address node;
@@ -21,6 +25,7 @@ contract Registry{
         uint256 channelID;
         uint256 balance;
         uint256 notificationsPushed;
+        //uint256 nodeID
     }
 
     struct user{
@@ -30,10 +35,20 @@ contract Registry{
     }
 
     mapping(address => node) nodeRegistry;
-    mapping(address => uint256) nodeID;
+    //mapping(address => uint256) nodeID; Not sure if needed
 
-    address[] iterateNodes;
+    address[] nodes;
 
-    function addNode
+    function addNode (address _node) public{
+        nodes.push(_node);
+    }
+
+    function countNodes() public returns(uint256) {
+        uint256 registryLength;
+        for (uint i; i < nodes.length; ++i){
+            registryLength++;
+        }
+        return registryLength;
+    }
 
 }
