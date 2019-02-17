@@ -53,10 +53,12 @@ Hackathon Challenges:
 
 # Impact Track - Increasing Emergency Preparedness
 <a href="https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%20refinement_Eng.pdf"> UN Global indicator framework for the Sustainable Development Goals & targets of the 2030 Agenda for Sustainable Development</a>
-Goal 
-3. Ensure healthy lives and promote well-being for all at all ages
+
+Goal 3. Ensure healthy lives and promote well-being for all at all ages
 - 3.d Strengthen the capacity of all countries, in particular developing countries, for early warning, risk reduction and management of national and global health risks
-- - 3.d.1 International Health Regulations (IHR) capacity and health emergency preparedness
+   - 3.d.1 International Health Regulations (IHR) capacity and health emergency preparedness
+   
+   
 During 2012 the United States launched the Wireless Emergency Alert (WEA) system, and it has acted as an essential part of population preparedness for natural disasters, imminent threats, and presidential alerts. International adoption of emergency systems has been slow due to government censorship, lack of economic incentive and underlying technology. 
 
 
