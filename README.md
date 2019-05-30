@@ -3,6 +3,8 @@
 # Project Name 
 Dappush
 
+<table border="0"><tr>  <td><a href="https://gittron.me/bots/0x564f38e1c042cbf887d966c079409e24"><img src="https://s3.amazonaws.com/od-flat-svg/0x564f38e1c042cbf887d966c079409e24.png" alt="gittron" width="50"/></a></td><td><a href="https://gittron.me/bots/0x564f38e1c042cbf887d966c079409e24">SUPPORT US WITH GITTRON</a></td></tr></table>
+
 # Project Tagline/Description
 WEA meets Ethereum. 
 - Censorship Resistant Emergency Alerts, Decentralized Push Notifications with Opt-in User Preferences on Smart Contract State Changes.
